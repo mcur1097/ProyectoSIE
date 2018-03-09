@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<head jsf:id="head">
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="../resources/css/materialize.min.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet"
+	href="../resources/css/estilos.css" />
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/font-awesome.css"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+<title>#{tituloPagina}</title>
+</head>
+
+<body>
+
+	<div class="row">
+		<div class="menu col s2">
+			<div id="scale-demo" class="card-panel  white lighten-1 z-depth-5">
+				<div class="container ">
+					<div class="valign-wrapper">
+						<a href="menuPrincipal.html" class=" accent-4 black-text"><img
+							src="../resources/css/S.I.E.jpg" /></a>
+					</div>
+
+				</div>
+
+				<a href="" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">home</i>
+						<H6 class="right-align black-text">Inicio</H6>
+					</div> </a> <a href="" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">account_box</i>
+						<H6 class="right-align black-text">Usuarios</H6>
+					</div></a> <a href="area.jsf" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">account_balance</i>
+						<H6 class="right-align black-text">Areas</H6>
+					</div> </a> <a href="" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="logobien medium material-icons push-s4 black-text">weekend</i>
+						<H6 class="right-align black-text">Bienes</H6>
+					</div></a> 
+					<a href="barraConsultas.xhtml" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">search</i>
+						<H6 class="right-align black-text">Consultas</H6>
+					</div> </a> <a href="" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">content_paste</i>
+						<H6 class="right-align black-text">Toma fisica</H6>
+					</div></a> <a href="" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">assignment</i>
+						<H6 class="right-align black-text">Generar Novedades</H6>
+					</div></a> <a href="" class=" accent-4 black-text"><div
+						class="valign-wrapper">
+						<i class="medium material-icons push-s4 black-text">assignment_turned_in</i>
+						<H6 class="right-align black-text">Informes</H6>
+					</div> </a>
+
+			</div>
+		</div>
+
+
+		<div class="container col l12 s12">
+			<div class="barra" style="">
+				<img class="barra" src="../resources/css/barra.png " />
+				<div class=" darken-1 lightghten-1  right-align">
+					<div class="logousuario">
+						<a href="login.html"><i
+							class="medium material-icons white-text">reply_all</i>
+							<div class="salida white-text">
+								<p>Salir</p>
+							</div> </a>
+					</div>
+					<div class="nombreusuario white-text">
+						<p>
+						<H5>Liliana Orrego</H5>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="card panel col s10 offset-s2 z-depth-5">
+		    <H4>#{titulo}</H4>
+			<ui:insert name="contenido" />
+		</div>
+
+
+
+	</div>
+</body>
+<script type="text/javascript" src="../resources/js/jquery.js"></script>
+<script type="text/javascript" src="../resources/js/materialize.min.js"></script>
+<script type="text/javascript" src="../resources/js/gridviewscroll.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('select').material_select();
+  }); 
+
+  $(document).ready(function(){	
+	    $('.modal').modal();
+	  });
+
+  var gridViewScroll = null;
+  window.onload = function () {
+      gridViewScroll = new GridViewScroll({
+          elementID: "gvMain",
+          width: 850,
+          height: 350,
+          freezeColumn: true,
+          freezeFooter: true,
+          freezeColumnCssClass: "GridViewScrollItemFreeze",
+          freezeFooterCssClass: "GridViewScrollFooterFreeze",
+          freezeHeaderRowCount: 2,
+          freezeColumnCount: 3
+      });
+      gridViewScroll.enhance();
+  }
+
+  $(document).ready(function(){
+      $('ul.tabs').tabs();
+    });
+
+  $(document).ready(function(){
+      $('ul.tabs').tabs();
+    });
+
+  funcion captura(){
+		var dato=tabla1
+
+		alert(dato)
+	}
+
+  $fucion tabla(){
+	  $var dato1=tablaConsulta.consultarUsuario
+	  $
+	  alert (dato);
+	  }
+	
+  $(".button-collapse").sideNav();
+      </script>
+<script type="text/javascript" id="mensage">var $toastContent = $('<span>I am toast content</span>'));
+    Materialize.toast($toastContent, 10000);</script>
+
+<style>
+nav {
+	width: 100%;
+}
+
+ul {
+	display: flex;
+	justify-content: space-around;
+}
+</style>
+</html>

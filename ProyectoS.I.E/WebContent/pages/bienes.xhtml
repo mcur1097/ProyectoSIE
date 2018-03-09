@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es"
+    xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+<head>
+	<title>Bienes</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>	 
+      <link type="text/css" rel="stylesheet" href="resources/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="resources/css/estilos.css"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  </head>
+<body>
+
+
+<div class="row">
+
+
+    <div class="menu col s2">
+      <div id="scale-demo" class="card-panel  white lighten-1 z-depth-5" >
+        <div class="container ">
+        <div class="valign-wrapper"><a href="menuPrincipal.html" class=" accent-4 black-text"><img src="resources/css/S.I.E.jpg" /></a></div>
+      </div>
+        <a href="menuPrincipal.html"><div class="valign-wrapper"><i class="medium material-icons push-s4 black-text">home</i>
+          <H6 class="right-align black-text">Inicio</H6> </div> </a>
+        <div class="valign-wrapper"><i class="medium material-icons push-s3">account_box</i><H6>Usuarios</H6>
+        </div>
+        
+         <a href="indexA.html"><div class="valign-wrapper"><i class="medium material-icons push-s4 black-text">account_balance</i>
+          <H6 class="right-align black-text">Ambientes</H6> </div> </a>
+        
+        <a href="index.html"><div class="valign-wrapper"><i class="logobien medium material-icons push-s4 black-text">weekend</i>
+          <H6 class="right-align black-text">Bienes</H6> </div> </a>
+        
+        <a href="     "><div class="valign-wrapper"><i class="medium material-icons push-s4 black-text">search</i>
+          <H6 class="right-align black-text">Consultas</H6> </div> </a>
+          
+        <a href="     "><div class="valign-wrapper"><i class="medium material-icons push-s4 black-text">content_paste</i>
+          <H6 class="right-align black-text">Toma fisica</H6> </div> </a>
+          
+        <a href="     "><div class="valign-wrapper"><i class="medium material-icons push-s4 black-text">assignment_turned_in</i>
+          <H6 class="right-align black-text">Informes</H6> </div> </a>
+          
+         <a href="     "><div class="valign-wrapper"><i class="medium material-icons push-s4 black-text">assignment</i>
+          <H6 class="right-align black-text">Generar Novedades</H6> </div> </a>
+        
+      </div>
+    </div>
+
+
+     <div class="container col l12">
+        <div class=" darken-1 lightghten-1  right-align">
+       <div class=""><img class="barra" src="resources/css/barra.png "/></div>
+       <div class="logousuario">
+       <a class='dropdown-button black-text' href='#' data-activates='dropdown1'><i class="medium material-icons">account_circle</i></a>
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="menuPrincipal">Inicio</a></li>
+    <li><a href="login.html">salir</a></li>
+  </ul>
+       </div>
+       <div class="nombreusuario">
+       <p><H5>Liliana Orrego</H5></p>
+       </div>       
+
+       <div class="botonSalir">
+        <a href="login.html" class="waves-effect waves-light btn z-depth-5">Salir</a>
+        </div>
+        </div>  
+      </div>
+
+
+
+      <div class="col s10 push-s2">
+      	
+      		<h3>Formatos de Bienes<hr/>	</h3>
+
+
+
+<div class="col s5 push-s9">
+<a class="modal-action modal-close waves-effect waves-light btn" jsf:href="#modal1">Registro de Bienes<i class="material-icons right">add</i></a>
+
+
+</div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+  <div class="container center-align "><H4>Registro de Bienes</H4></div>
+   <div class="row">
+    <form class="container">
+      <div class="row">
+        <div class="input-field">
+          <label for="nombre">Nombre</label>
+          <p></p>
+          <input placeholder="" id="nombre" type="text" class="validate"/>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field">
+          <label for="placa">Placa</label>
+          <p></p>
+          <input placeholder="" id="placa" type="text" class="validate"/>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field">
+          <label for="tipo">Tipo</label>
+          <p></p>
+          <input placeholder="" id="tipo" type="text" class="validate"/>
+        </div>
+      </div>
+     <div class="row">
+        <div class="input-field">
+          <label for="ambiente">Ambiente</label>
+          <p></p>
+          <input placeholder="" id="ambiente" type="text" class="validate"/>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field">
+          <label for="Cuentadante">cuentadante</label>
+          <p></p>
+          <input placeholder="" id="cuentadante" type="text" class="validate"/>
+        </div>
+      </div>
+    </form>
+  </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat  teal lighten-1 white-text">Agregar</a>
+    </div>
+  </div>
+
+
+
+  
+
+<table class="striped centered responsive-table z-depth-5" >
+        <thead>
+          <tr class="card-panel  teal lighten-1 ">
+              <th class="ca">Nombre</th>
+              <th>Fecha</th>
+              <th>Precio</th>
+              <th>Descripcion</th>
+              <th>Modelo</th>
+              <th>Cuentadante</th>
+              <th>Ambiente</th>
+              <th>Herramientas</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons s12">create</i>	<i class="material-icons s12 push-s5">delete_forever</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons">create</i><i class="material-icons">delete_forever</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons">create</i><i class="material-icons">delete_forever</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons">create</i><i class="material-icons">delete_forever</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons">create</i><i class="material-icons">delete_forever</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons">create</i><i class="material-icons">delete_forever</i></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><i class="material-icons">create</i><i class="material-icons">delete_forever</i></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      	
+      </div>
+
+    </div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+      <script type="text/javascript">
+         $(document).ready(function(){
+    $('.modal').modal();
+  });
+      </script>
+</body>
+</html>

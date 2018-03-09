@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/templates/barraConsultas.xhtml">
+  
+  
+    <ui:param name="tituloPagina" value="Consulta de bien"/>	
+	<ui:define name="tablasConsultas">
+
+		<h:form>
+
+			<div class="col s12">
+				<input type="text" jsf:value="#{tablaConsulta.miBien.placa}" />
+				<h:commandButton action="#{tablaConsulta.consultarBien()}"
+					class="waves-effect waves-light btn  col s3 push-s9"
+					value="Consultar Bien"></h:commandButton>
+			</div>
+			<h:outputLabel value="#{tablaConsulta.msjDB}" />
+
+			<div class="container col s12">
+				<div class="tabla" style="height: 480px; overflow: auto">
+					<h:panelGrid columns="10" rendered="#{tablaConsulta.muestraInfo}"
+						class="striped centered responsive-table z-depth-5">
+
+						<h:outputLabel id="placa" class="input-field col m3">Placa: </h:outputLabel>
+						<h:outputLabel id="serial" class="input-field col m3">Serial: </h:outputLabel>
+						<h:outputLabel id="nombreBien" class="input-field col m3">Nombre: </h:outputLabel>
+						<h:outputLabel id="descripcion" class="input-field col m3">Descripcion: </h:outputLabel>
+						<h:outputLabel id="modelo" class="input-field col m3">Modelo: </h:outputLabel>
+						<h:outputLabel id="marca" class="input-field col m3">Marca: </h:outputLabel>
+						<h:outputLabel id="fechaIngreso" class="input-field col m3">Fecha ingreso: </h:outputLabel>
+						<h:outputLabel id="valor" class="input-field col m3">Valor: </h:outputLabel>
+						<h:outputLabel id="areaAm" class="input-field col m3">Area: </h:outputLabel>
+						<h:outputLabel id="cedula" class="input-field col m3">Cedula: </h:outputLabel>
+
+						<h:outputLabel for="placa" class="input-field col m3"
+							value="#{tablaConsulta.miBien.placa}" />
+						<h:outputLabel for="serial" class="input-field col m3"
+							value="#{tablaConsulta.miBien.serialb}" />
+						<h:outputLabel for="nombreBien" class="input-field col m3"
+							value="#{tablaConsulta.miBien.nombreBien}" />
+						<h:outputLabel for="descripcion" class="input-field col m3"
+							value="#{tablaConsulta.miBien.descripcion}" />
+						<h:outputLabel for="modelo" class="input-field col m3"
+							value="#{tablaConsulta.miBien.modelo}" />
+						<h:outputLabel for="marca" class="input-field col m3"
+							value="#{tablaConsulta.miBien.marca}" />
+						<h:outputLabel for="fechaIngreso" class="input-field col m3"
+							value="#{tablaConsulta.miBien.fechaIngreso}" />
+						<h:outputLabel for="valor" class="input-field col m3"
+							value="#{tablaConsulta.miBien.valor}" />
+						<h:outputLabel for="areaAm" class="input-field col m3"
+							value="#{tablaConsulta.miBien.areaAm}" />
+						<h:outputLabel for="cedula" class="input-field col m3"
+							value="#{tablaConsulta.miBien.cedula}" />
+
+					</h:panelGrid>
+				</div>
+			</div>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
