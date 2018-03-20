@@ -1,6 +1,6 @@
 package vo;
 
-public class LoginVo {
+public class PerfilVo {
 
 	private String documento;
 	private String nombre;
@@ -10,9 +10,9 @@ public class LoginVo {
 	private String passw2;
 	private boolean editar;
 	
-	public LoginVo(){ 	}
+	public PerfilVo(){ 	}
 	
-	public LoginVo(String documento,String nombre, String correo, String telefono, 
+	public PerfilVo(String documento,String nombre, String correo, String telefono, 
 			 String passw2, boolean editar, String passw) {
 		super();
 		this.documento=documento;
@@ -53,4 +53,5 @@ public class LoginVo {
 	public void setPassw2(String passw2) {	this.passw2 = passw2;	}
 
 	
+
 }

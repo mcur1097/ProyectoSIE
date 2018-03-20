@@ -5,6 +5,7 @@ public class BienVo {
 	private String placa;
 	private String serialB;
 	private String nomBien;
+	private String placaPadre;
 	private String descripcion;
 	private String modelo;
 	private String marca;
@@ -18,7 +19,7 @@ public class BienVo {
 	}
 	
 	public BienVo(String placa, String serialB, String nomBien, String descripcion, String modelo, String marca,
-			String ingreso, String valor, String area, String cuentadante){
+			String ingreso, String valor, String area, String cuentadante, String placaPadre){
 		super();
 		this.placa=placa;
 		this.serialB=serialB;
@@ -26,6 +27,7 @@ public class BienVo {
 		this.descripcion=descripcion;
 		this.modelo=modelo;
 		this.marca=marca;
+		this.placaPadre=placaPadre;
 		this.ingreso=ingreso;
 		this.valor=valor;
 		this.area=area;
@@ -99,5 +101,13 @@ public class BienVo {
 
 	public void setEditar(boolean editar) {
 		this.editar = editar;
+	}
+
+	public String getPlacaPadre() {
+		return placaPadre;
+	}
+
+	public void setPlacaPadre(String placaPadre) {
+		this.placaPadre = placaPadre;
 	}
 }

@@ -1,6 +1,6 @@
 package bean;
 
-import java.util.ArrayList;  
+import java.util.ArrayList;   
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -41,7 +41,7 @@ public class TablaBean {
      miBienVo=new BienVo();
 	return msjBD; 
      }
-	   
+
    public void eliminarBien(BienVo miBienVo){
      setMsjBD(miBienDao.eliminarBien(miBienVo));
       listaBien.remove(miBienVo);

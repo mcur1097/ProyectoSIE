@@ -6,7 +6,7 @@
       template="/templates/plantilla.xhtml"> 
 
 <head>
-	<link rel="stylesheet" href="resources/css/materialize2.min.css"/>
+	<link rel="stylesheet" href="resources/css/materialize.min.css"/>
 		<ui:param name="tituloPagina" value="RegistroBienes" />
 </head> 
 
@@ -35,13 +35,13 @@
 								</div>
 								
 								<div class="input-field col s5">
-								<h:outputLabel value="Nombre Bien: " for="nomBien" />
-									<h:inputText value="#{tablaBean.miBienVo.nomBien}" id="nomBien" />
+									<h:outputLabel value="PlacaPadre: " for="placaPadre" />
+									<h:inputText value="#{tablaBean.miBienVo.placaPadre}" id="placaPadre" />
 								</div>
 								
 								<div class="input-field col s5">
-									<h:outputLabel value="Ingreso: " for="ingreso" />
-									<h:inputText class="datepicker" value="#{tablaBean.miBienVo.ingreso}" id="ingreso" type="date"/>
+								<h:outputLabel value="Nombre Bien: " for="nomBien" />
+									<h:inputText value="#{tablaBean.miBienVo.nomBien}" id="nomBien" />
 								</div>
 								
 								<div class="input-field col s10">
@@ -59,6 +59,11 @@
 									<h:inputText value="#{tablaBean.miBienVo.marca}" id="marca" />
 								</div>
 								
+								<div class="input-field col s5">
+									<h:outputLabel value="Ingreso: " for="ingreso" />
+									<h:inputText class="datepicker" value="#{tablaBean.miBienVo.ingreso}" id="ingreso" type="date"/>
+								</div>
+																
 								<div class="input-field col s5">
 									<h:outputLabel value="Valor: " for="valor" />
 									<h:inputText value="#{tablaBean.miBienVo.valor}" id="valor" />

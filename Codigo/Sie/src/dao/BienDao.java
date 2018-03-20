@@ -20,21 +20,22 @@ public class BienDao {
 		
 		connection = miConexion.getConnection();
 		
-		String consulta = "INSERT INTO bien (placa,serialB,nombreBien,descripcion,modelo,marca,fechaIngreso,valor,areaAm,cedula)"
-				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
+		String consulta = "INSERT INTO bien (placa,serialB,placaPadre,nombre,descripcion,modelo,marca,fechaIngreso,valor,idArea,documento_User)"
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 		
 		try{
 		  preStatement = connection.prepareStatement(consulta);
 		  preStatement.setString(1, miBien.getPlaca());
 		  preStatement.setString(2, miBien.getSerialB());
-		  preStatement.setString(3, miBien.getNomBien());
-		  preStatement.setString(4, miBien.getDescripcion());
-		  preStatement.setString(5, miBien.getModelo());
-		  preStatement.setString(6, miBien.getMarca());
-		  preStatement.setString(7, miBien.getIngreso());
-		  preStatement.setString(8, miBien.getValor());
-		  preStatement.setString(9, miBien.getArea());
-		  preStatement.setString(10, miBien.getCuentadante());
+		  preStatement.setString(3, miBien.getPlacaPadre());
+		  preStatement.setString(4, miBien.getNomBien());
+		  preStatement.setString(5, miBien.getDescripcion());
+		  preStatement.setString(6, miBien.getModelo());
+		  preStatement.setString(7, miBien.getMarca());
+		  preStatement.setString(8, miBien.getIngreso());
+		  preStatement.setString(9, miBien.getValor());
+		  preStatement.setString(10, miBien.getArea());
+		  preStatement.setString(11, miBien.getCuentadante());
 		  preStatement.execute();
 		  
 		}catch (SQLException e){
@@ -58,19 +59,19 @@ public class BienDao {
 		
 		try{
 			
-	String consulta = "UPDATE bien SET serialB = ?, nombreBien = ?, descripcion = ?, modelo = ?, marca = ?, "
+	String consulta = "UPDATE bien SET serialB = ?, placaPadre = ?, nombre = ?, descripcion = ?, modelo = ?, marca = ?, "
 		+ "fechaIngreso = ?, valor = ? WHERE placa = ?";
-	
-	
+		
 		  preStatement = connection.prepareStatement(consulta);
 		  preStatement.setString(1, miBien.getSerialB());
-		  preStatement.setString(2, miBien.getNomBien());
-		  preStatement.setString(3, miBien.getDescripcion());
-		  preStatement.setString(4, miBien.getModelo());
-		  preStatement.setString(5, miBien.getMarca());
-		  preStatement.setString(6, miBien.getIngreso());
-		  preStatement.setString(7, miBien.getValor());
-		  preStatement.setString(8, miBien.getPlaca());
+		  preStatement.setString(2, miBien.getPlacaPadre());
+		  preStatement.setString(3, miBien.getNomBien());
+		  preStatement.setString(4, miBien.getDescripcion());
+		  preStatement.setString(5, miBien.getModelo());
+		  preStatement.setString(6, miBien.getMarca());
+		  preStatement.setString(7, miBien.getIngreso());
+		  preStatement.setString(8, miBien.getValor());
+		  preStatement.setString(9, miBien.getPlaca());
 		  preStatement.executeUpdate();
 		  
 		  resultado="Se ha Actualizado Correctamente";
@@ -82,7 +83,6 @@ public class BienDao {
 		}
 	 return resultado;	
 	}
-	
 	
 	public String eliminarBien(BienVo miBien){
 		String resp="";
@@ -137,23 +137,23 @@ public class BienDao {
 			   miBien = new BienVo();
 			   miBien.setPlaca(result.getString("placa"));
 			   miBien.setSerialB(result.getString("serialb"));
-			   miBien.setNomBien(result.getString("nombreBien"));
+			   miBien.setPlacaPadre(result.getString("PlacaPadre"));
+			   miBien.setNomBien(result.getString("nombre"));
 			   miBien.setDescripcion(result.getString("descripcion"));
 			   miBien.setModelo(result.getString("modelo"));
 			   miBien.setMarca(result.getString("marca"));
 			   miBien.setIngreso(result.getString("fechaIngreso"));
 			   miBien.setValor(result.getString("valor"));
-			   miBien.setArea(result.getString("areaAm"));
-			   miBien.setCuentadante(result.getString("cedula"));
+			   miBien.setArea(result.getString("idArea"));
+			   miBien.setCuentadante(result.getString("documento_User"));
 			   listaBienes.add(miBien);
 			 }
 		  }
 		}catch(SQLException e){
-			System.out.println("Error en la consulta del Usuario " +e.getMessage());
+			System.out.println("Error en la consulta del Bien " +e.getMessage());
 		}finally {
 			miConexion.desconectar();
 		}
 		return listaBienes;
 	}
-
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/templates/plantilla.xhtml"> 
+
+<head>
+	<link rel="stylesheet" href="resources/css/materialize.min.css"/>
+		<ui:param name="tituloPagina" value="tomaFisica" />
+</head> 
+
+<body> 
+
+	<ui:define name="contenido">
+    <div class="row">
+	 <div class="col s12">
+        <div class="card-panel z-depth-5 ">
+          <h4>Toma Física</h4>   
+        </div>
+		<h:form rendered="#{not tomaFisicaBean.visible}">
+        <div class="row">
+          <div class="input-field col s12" style="padding-right: 60%;">
+          <h:outputLabel value="Documento " for="documento" />
+			<h:inputText id="documento" />
+       	  </div>
+        
+        <div class=" col s2">
+          <h:commandLink action="#{tomaFisicaBean.accionar()}"  class="waves-effect waves-light btn"><i class="material-icons right-center"></i>Delegar Toma</h:commandLink> 
+        </div></div>
+         
+        </h:form>
+        <h:form rendered="#{tomaFisicaBean.visible}">
+         <div>
+          <div class="input-field col s4">
+          <input id="last_name" type="text" class="validate"/>
+          <label for="last_name">Número o Nombre del Ambiente</label>
+		  </div>
+		</div>
+		
+ 		<div class="input-field col s8" style="padding-right: 40%;">
+		    <select>
+		      <option value="">Bien</option>
+		      <option value="1">Mesa</option>
+		      <option value="2">Silla</option>
+		      <option value="3">Portatil</option>
+		      <option value="3">Mouse</option>
+		      <option value="3">Teclado</option>
+		      <option value="3">Torre</option>
+		      <option value="3">Monitor</option>
+		      <option value="3">Televisor</option>
+		    </select>
+   		   <label>Bienes</label>
+  		</div>
+  		<div class=""></div>
+      	<a class="waves-effect waves-light btn col s2">Consultar</a>
+      	
+      	 <div class=" col s0.5">
+          <h:commandLink action="#{tomaFisicaBean.devolver()}"  class="waves-effect waves-light btn center-align"><i class="material-icons right-center"></i> +</h:commandLink> 
+        </div></h:form></div></div>
+        
+       <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
+       <script type="text/javascript" src="resources/js/materialize.min.js"></script>
+	   <script type="text/javascript">
+		    $('input.autocomplete').autocomplete({
+		    data: {
+		      "Apple": null,
+		      "Microsoft": null,
+		      "Google": 'https://placehold.it/250x250'  
+		    },
+		    
+		    limit: 20,
+		    onAutocomplete: function(val) {},
+		    minLength: 1,
+		    });
+		</script>
+		
+      	<script type="text/javascript">
+			 $(document).ready(function() {
+			    $('select').material_select();
+			  });
+			
+			   $('input.autocomplete').autocomplete({
+			    data: {
+			      "Apple": null,
+			      "Microsoft": null,
+			      "Google": 'https://placehold.it/250x250'
+			    },
+			    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+			    onAutocomplete: function(val) {
+			      // Callback function when value is autcompleted.
+			    },
+			    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+			  });
+		</script>
+    </ui:define>
+            
+</body> 
+</ui:composition>
+    

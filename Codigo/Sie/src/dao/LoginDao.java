@@ -38,7 +38,7 @@ public class LoginDao {
 		try {
 			if (connection != null) {
 				
-				String consulta = "SELECT * FROM perfilusuario where documento = ? and contraseña = ? ";
+				String consulta = "SELECT * FROM usuarios where documento = ? and contrasena = ? ";
 
 				statement = connection.prepareStatement(consulta);
 
@@ -49,9 +49,12 @@ public class LoginDao {
 				if (result.next() == true) {
 					dtos=true;
 					miPersona = new LoginVo();
-					miPersona.setNombre(result.getString("nombre"));
-					
-					nombredeusuario(result.getString("nombre"));
+					miPersona.setNombre(result.getString("nombreCompleto"));
+					miPersona.setDocumento(result.getString("documento"));
+					miPersona.setTelefono(result.getString("telefono"));
+					miPersona.setCorreo(result.getString("email"));
+					miPersona.setPassw(result.getString("contrasena"));
+					nombredeusuario(result.getString("nombreCompleto"));
 					
 				}else{
 					dtos=false;

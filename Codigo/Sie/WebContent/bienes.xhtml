@@ -44,6 +44,13 @@
 						<h:outputLabel value="#{datos.serialB}" rendered="#{not datos.editar}" />
 				</h:column>
 				<h:column>
+				    <f:facet name="header">
+					  <h:outputLabel value="PlacaPadre" />
+					</f:facet>
+						<h:inputText value="#{datos.placaPadre}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.placaPadre}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
 					<f:facet name="header">
 				      <h:outputLabel value="NombreBien" />
 					</f:facet>

@@ -18,7 +18,7 @@
 <body background="resources/img/teal.png">
 
  <form class="col s12" jsf:id="form-1">
-
+ 
  <div class="container.fluid ">
  	<div class="fondo">
   <div class="row col s6 center-align">
@@ -38,21 +38,19 @@
  	      <input jsf:id="txtDocumento" type="text" jsf:value="#{loginBean.miLoginVo.documento}" placeholder="Documento"/>
 
  	     <input jsf:id="txtContraseña" type="password" jsf:value="#{loginBean.miLoginVo.passw}" placeholder="Contraseña"/>
-
- 	   <div class="col-md-12 col-sm-12 col-xs-12 link center-align">
- 	   	<p class="ol">¿Olvido su Contraseña?</p>
- 	   </div>
-
      <div>
        <h:commandButton class="btn btn-default" actionListener="#{loginBean.validarUsuario()}" value="Ingresar" action="#{loginBean.pagina()}"/> 
   	 </div>
-
+  	 
   	</div>	
-  </div>
+  </div>    	
  </div>
+   	<h:outputText class="msj" value="#{loginBean.mensaje}" style="margin-left: 20%;"/>
 </div>
 </div>
   </form>
-
+  	 
+  	  
+  	  
 </body>
 </html>

@@ -62,8 +62,8 @@ public class NovedadBean {
 	    	String receptor=miNovedadVo2.getCorreo();
 	    	String receptor2= "leidycaranton2000@gmail.com";
 	    	String pass="proyectoSie";
-	    	String asunto="Reporte de Novedades S.I.E";
-	    	
+	    	String asunto="Reporte de Novedades S.I.E"; 
+		
 	    	String msj="Placa: "+ miNovedadVo.getPlaca() +"\n"
 	    			+ "Nombre Bien: "+ miNovedadVo3.getNombreBien() +"\n"
 	    			+ "Ambiente: "+ miNovedadVo.getArea() +"\n"
@@ -77,7 +77,6 @@ public class NovedadBean {
 	    	
 			mensaje="Novedad Realizada";
 			
-			System.out.println(miNovedadVo4.getDocumento());
 			agregarNovedad(miNovedadVo4.getDocumento());
 		  }
 		
@@ -85,7 +84,6 @@ public class NovedadBean {
 	}
 	
   public String agregarNovedad(String documento){
-
 	listaNov.add(miNovedadVo);
 	 setMsjBD(miNovDao.agregarNovedad(miNovedadVo,documento));
 	  miNovedadVo=new NovedadVo();

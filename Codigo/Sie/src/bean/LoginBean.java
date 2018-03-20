@@ -2,6 +2,8 @@ package bean;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 import vo.LoginVo;
 import dao.LoginDao;
@@ -16,6 +18,8 @@ public class LoginBean {
 	private String resp="";
 	private String respnom="";
 	private String nombreusu="";
+	FacesContext context = FacesContext.getCurrentInstance();
+	HttpSession session = (HttpSession)context.getExternalContext().getSession(true);
 	
 	public LoginBean(){
 		miLoginVo =new LoginVo();
@@ -29,12 +33,14 @@ public class LoginBean {
 	public String validarUsuario () {
 
 		LoginVo persona=miLoginDao.consultarUsuarioLogin(miLoginVo.getDocumento(), miLoginVo.getPassw());
-		
+		session.setAttribute("user", persona);
 		if (persona!=null) {
+			
 			resp="inicio.jsf";
 			mensaje="";
 			nombreusu=persona.getNombre();
 			usuario(nombreusu);
+			
 		}else{
 			resp="";
 			mensaje="El usuario no es Valido, Verifique nuevamente...";

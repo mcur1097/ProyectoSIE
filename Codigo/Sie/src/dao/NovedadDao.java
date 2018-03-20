@@ -62,8 +62,8 @@ public class NovedadDao {
 		try {
 			if (connection != null) {
 				
-				String consulta = "SELECT correo FROM perfilusuario,bien where placa= ? "
-						+ "and bien.cedula=perfilusuario.documento";
+				String consulta = "SELECT email FROM usuarios,bien where placa= ? "
+						+ "and bien.documento_User=usuarios.documento";
 
 				statement = connection.prepareStatement(consulta);
 
@@ -73,7 +73,7 @@ public class NovedadDao {
 				
 				if (result.next() == true) {			       
 					miNov = new NovedadVo();
-					miNov.setCorreo(result.getString("correo"));
+					miNov.setCorreo(result.getString("email"));
 					mino = new NovedadBean();
 					mino.recibirInstancia(miNov);
 				}
@@ -100,7 +100,7 @@ public class NovedadDao {
 		try {
 			if (connection != null) {
 				
-				String consulta = "SELECT nombreBien FROM bien where placa = ?";
+				String consulta = "SELECT nombre FROM bien where placa = ?";
 
 				statement = connection.prepareStatement(consulta);
 
@@ -110,7 +110,7 @@ public class NovedadDao {
 				
 				if (result.next() == true) {			       
 					miNovNom = new NovedadVo();
-					miNovNom.setNombreBien(result.getString("nombreBien"));
+					miNovNom.setNombreBien(result.getString("nombre"));
 					mino = new NovedadBean();
 					mino.recibirNombre(miNovNom);
 				}
@@ -137,8 +137,8 @@ public class NovedadDao {
 		try {
 			if (connection != null) {
 				
-				String consulta = "SELECT documento FROM perfilusuario, bien where placa = ? and perfilusuario.documento"
-						+ "=bien.cedula";
+				String consulta = "SELECT documento FROM usuarios, bien where placa = ? and usuarios.documento"
+						+ "=bien.documento_User";
 
 				statement = connection.prepareStatement(consulta);
 
@@ -170,17 +170,17 @@ public class NovedadDao {
 		
 		connection = miConexion.getConnection();
 		
-		String consulta = "INSERT INTO novedadusuarios (placa,area,descripcion,fecha,hora,cedula)"
+		String consulta = "INSERT INTO novedades (placa_Bien,descripcion,fecha,hora,documento_User,area)"
 				+ "VALUES (?,?,?,?,?,?)";
 		
 		try{
 		  preStatement = connection.prepareStatement(consulta);
 		  preStatement.setString(1, miNovedadVo.getPlaca());
-		  preStatement.setString(2, miNovedadVo.getArea());
-		  preStatement.setString(3, miNovedadVo.getDescripcion());
-		  preStatement.setString(4, miNovedadVo.getFecha());
-		  preStatement.setString(5, miNovedadVo.getHora());
-		  preStatement.setString(6, documento);
+		  preStatement.setString(2, miNovedadVo.getDescripcion());
+		  preStatement.setString(3, miNovedadVo.getFecha());
+		  preStatement.setString(4, miNovedadVo.getHora());
+		  preStatement.setString(5, documento);
+		  preStatement.setString(6, miNovedadVo.getArea());
 		  preStatement.execute();
 		  
 		}catch (SQLException e){
