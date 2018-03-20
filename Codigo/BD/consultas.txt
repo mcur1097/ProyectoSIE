@@ -1,0 +1,21 @@
+SELECT b.placa,b.serialB,b.nombre,b.modelo,b.marca,b.valor,b.descripcion,b.fechaIngreso,b.tipo,b.idArea,b.documento_User, u.nombreCompleto AS cuentadante
+ FROM bien b,usuarios u WHERE placa IN (7701235999918,7702004003508,1094899169) AND b.documento_User=u.documento
+			
+	
+SELECT b.placa,b.serialB,b.nombre,b.modelo,b.marca,b.valor,b.descripcion,b.fechaIngreso,b.tipo,b.idArea,b.documento_User, u.nombreCompleto AS cuentadante
+ FROM bien b,usuarios u WHERE placa = 1094899169 AND b.documento_User=u.documento	
+ 
+ SELECT b.placa,b.serialB,b.nombre,b.modelo,b.marca,b.valor,b.descripcion,b.fechaIngreso,b.tipo,b.idArea,b.documento_User, u.nombreCompleto AS cuentadante
+ FROM bien b,usuarios u WHERE serialB = 4444 AND b.documento_User=u.documento	
+ 
+ 
+ SELECT b.placa,b.serialB,b.nombre,b.modelo,b.marca,b.valor,b.descripcion,b.fechaIngreso,b.tipo,b.idArea,b.documento_User, u.nombreCompleto AS cuentadante 
+  FROM bien b,usuarios u  WHERE serialB = 4444 AND b.documento_User=u.documento
+ 
+SELECT * FROM lectura WHERE idArea = 1 AND idBien= 123456
+
+SELECT b.placa,b.serialB,b.nombre,b.modelo,b.marca,b.valor,b.descripcion,b.fechaIngreso,b.tipo,b.idArea,a.nombreArea,b.documento_User, u.nombreCompleto AS cuentadante
+ FROM bien b,usuarios u, AREA a WHERE b.idArea=1 AND b.documento_User=u.documento AND b.idArea=a.idArea
+ 
+SELECT b.placa,b.serialB,b.nombre,b.modelo,b.marca,b.valor,b.descripcion,b.fechaIngreso,b.tipo,b.idArea,a.nombreArea,b.documento_User, u.nombreCompleto AS cuentadante
+ FROM bien b,usuarios u, AREA a WHERE  b.placa=123456 AND b.documento_User=u.documento AND b.idArea=a.idArea
