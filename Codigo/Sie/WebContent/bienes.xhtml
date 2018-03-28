@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/templates/plantilla.xhtml"> 
+
+<head>
+	<link rel="stylesheet" href="resources/css/materialize.min.css"/>
+		<ui:param name="tituloPagina" value="GestionBienes" />
+</head> 
+
+<body>
+
+    <ui:define name="contenido">
+
+	<div class="row">
+		<div class="col s12">
+			<div class="card-panel z-depth-5 ">
+				<h4>Gestion de Bienes</h4>
+			</div><br/>
+
+			<div class="col s12">
+					<a href="RegistroBienes.xhtml"
+						class="col s3 waves-effect waves-light btn z-depth-5 push-s9">Nuevo	Bien</a>
+						 </div>
+							<br/><br/><br/>
+
+	<h:form>
+		<h:dataTable value="#{tablaBean.listaBien}" var="datos"
+			 rendered="#{tablaBean.listaBien.size()>0}">
+				<h:column>
+					<f:facet name="header">
+		       		  <h:outputLabel value="Placa" />
+	  				</f:facet>
+						<h:inputText value="#{datos.placa}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.placa}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+				    <f:facet name="header">
+					  <h:outputLabel value="Serial" />
+					</f:facet>
+						<h:inputText value="#{datos.serialB}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.serialB}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+				    <f:facet name="header">
+					  <h:outputLabel value="PlacaPadre" />
+					</f:facet>
+						<h:inputText value="#{datos.placaPadre}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.placaPadre}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="NombreBien" />
+					</f:facet>
+						<h:inputText value="#{datos.nomBien}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.nomBien}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+					  <h:outputLabel value="Descripción" />
+				    </f:facet>
+					 	<h:inputText value="#{datos.descripcion}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.descripcion}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Modelo" />
+					</f:facet>
+						<h:inputText value="#{datos.modelo}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.modelo}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Marca" />
+					</f:facet>
+						<h:inputText value="#{datos.marca}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.marca}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Ingreso" />
+					</f:facet>
+						<h:inputText value="#{datos.ingreso}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.ingreso}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Valor" />
+					</f:facet>
+						<h:inputText value="#{datos.valor}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.valor}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Area" />
+					</f:facet>
+						<h:inputText value="#{datos.area}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.area}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Cuentadante" />
+					</f:facet>
+						<h:inputText value="#{datos.cuentadante}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.cuentadante}" rendered="#{not datos.editar}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+				      <h:outputLabel value="Acciones" />
+					</f:facet>
+						<h:commandLink action="#{tablaBean.editarBien(datos)}" rendered="#{not datos.editar}" >
+						 <i class="material-icons">create</i></h:commandLink>
+						<h:commandLink action="#{tablaBean.guardarBien(datos)}" rendered="#{datos.editar}" >
+						 <i class="material-icons">save</i></h:commandLink> 
+						<h:commandLink actionListener="#{tablaBean.eliminarBien(datos)}" >
+						 <i class="material-icons">delete</i></h:commandLink>
+				</h:column>
+		</h:dataTable>								
+	</h:form>
+		</div> 
+	</div>
+
+	<!--Import jQuery before materialize.js-->
+	<script src="resources/js/jquery-3.3.1.min.js"></script>
+	<script src="resources/js/materialize.min.js"></script>
+
+	<script>
+	 $(document).ready(function() {
+	    Materialize.updateTextFields();
+	  });</script>
+	  
+	  </ui:define>
+</body>
+</ui:composition>

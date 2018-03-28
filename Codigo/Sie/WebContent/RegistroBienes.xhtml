@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/templates/plantilla.xhtml"> 
+
+<head>
+	<link rel="stylesheet" href="resources/css/materialize.min.css"/>
+		<ui:param name="tituloPagina" value="RegistroBienes" />
+</head> 
+
+<body> 
+
+	<ui:define name="contenido">
+    
+				<div class="row">
+					<div class="col s10">
+						<div class="card-panel z-depth-5 ">
+				<h4>Registro de Bienes</h4>
+			      </div><br/>
+		              </div>
+      
+					<h:form class="col s12">
+						<div class="row">
+						
+								<div class="input-field col s5">
+									<h:outputLabel value="Placa: " for="placa" />
+									<h:inputText value="#{tablaBean.miBienVo.placa}" id="placa" />
+								</div>
+							
+								<div class="input-field col s5">
+									<h:outputLabel value="Serial: " for="serialB" />
+									<h:inputText value="#{tablaBean.miBienVo.serialB}" id="serialB" />
+								</div>
+								
+								<div class="input-field col s5">
+									<h:outputLabel value="PlacaPadre: " for="placaPadre" />
+									<h:inputText value="#{tablaBean.miBienVo.placaPadre}" id="placaPadre" />
+								</div>
+								
+								<div class="input-field col s5">
+								<h:outputLabel value="Nombre Bien: " for="nomBien" />
+									<h:inputText value="#{tablaBean.miBienVo.nomBien}" id="nomBien" />
+								</div>
+								
+								<div class="input-field col s10">
+									<h:outputLabel value="Descripción: " for="descripcion" />
+									<h:inputText value="#{tablaBean.miBienVo.descripcion}" id="descripcion" />
+								</div>
+								
+								<div class="input-field col s5">
+									<h:outputLabel value="Modelo: " for="modelo" />
+									<h:inputText value="#{tablaBean.miBienVo.modelo}" id="modelo" />
+								</div>
+								
+								<div class="input-field col s5">
+									<h:outputLabel value="Marca: " for="marca" />
+									<h:inputText value="#{tablaBean.miBienVo.marca}" id="marca" />
+								</div>
+								
+								<div class="input-field col s5">
+									<h:outputLabel value="Ingreso: " for="ingreso" />
+									<h:inputText class="datepicker" value="#{tablaBean.miBienVo.ingreso}" id="ingreso" type="date"/>
+								</div>
+																
+								<div class="input-field col s5">
+									<h:outputLabel value="Valor: " for="valor" />
+									<h:inputText value="#{tablaBean.miBienVo.valor}" id="valor" />
+								</div>
+								
+								<div class="input-field col s5">
+									<h:outputLabel value="Area: " for="area" />
+									<h:inputText value="#{tablaBean.miBienVo.area}" id="area" />
+								</div>
+								
+								<div class="input-field col s5">
+									<h:outputLabel value="Cuentadante: " for="cuentadante" />
+									<h:inputText value="#{tablaBean.miBienVo.cuentadante}" id="cuentadante" />
+								</div>									
+				</div>
+								
+							<div class="col s4" style="margin-left: 25%">							
+							
+							<h:commandButton actionListener="#{tablaBean.agregarBien()}" value="Registrar" action="bienes"
+									class="col s4 waves-effect waves-light btn modal-trigger push-s4"/>
+							</div>
+							
+            </h:form>
+            </div>
+
+<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="resources/js/materialize.js"></script>
+
+ <script>
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+  </script>
+      </ui:define>
+            
+</body> 
+</ui:composition>

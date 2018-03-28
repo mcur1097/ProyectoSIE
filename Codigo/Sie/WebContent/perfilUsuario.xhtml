@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/templates/plantilla.xhtml"> 
+
+<head>
+	<link rel="stylesheet" href="resources/css/materialize.min.css"/>
+		<ui:param name="tituloPagina" value="PerfilUsuario" />
+</head> 
+
+<body> 
+
+	<ui:define name="contenido">
+    
+				<div class="row">
+					<div class="col s12">
+						<div class="card-panel z-depth-5 ">
+				<h4>Mi Perfil</h4>
+			      </div><br/>
+		              </div>
+      
+					<h:form class="col s12">
+						<div class="row">
+						
+								 <div class="input-field col s6">
+          							<input disabled="Is Not Editable" value="#{user.documento}" id="disabled" type="text" class="validate"/>
+          							<label for="disabled">documento</label>
+                                     </div>   
+							
+								<div class="input-field col s6">
+          							<input disabled="Is Not Editable" value="#{user.nombre}" id="disabled" type="text" class="validate"/>
+          							<label for="disabled">Nombre</label>
+                                </div> 
+								
+								<div class="input-field col s6">
+								<label for="disabled">Telefono</label>
+									<h:inputText value="#{user.telefono}" id="telefono"/>
+								</div>
+							
+								<div class="input-field col s6">
+									<h:outputLabel value="Correo Electronico: " for="correo" />
+									<h:inputText value="#{user.correo}" id="correo"/>
+								</div>
+								
+								<div class="input-field col s6">
+									<h:outputLabel value="Contraseña: " for="contraseña" />
+									<h:inputText value="#{user.passw}" id="contraseña"/>
+								</div>
+								
+								<div class="input-field col s6">
+									<h:outputLabel value="Confirmar Contraseña: " for="confcontra"/>
+									<h:inputText  value="#{user.passw2}" id="confcontra"/>
+								</div>
+							</div>					
+							
+						  <div class="col s4" style="margin-left: 65%">
+							<h:commandButton value="Guardar" actionListener="#{perfilBean.editarUsuario(user)}"
+									class="col s5 waves-effect waves-light btn modal-trigger push-s2"/>
+							</div>
+							
+						  <div class="col s4" style="margin-left: 80%; margin-top: -4%">
+							<h:commandButton value="Cancelar" action="inicio" actionListener="#{perfilBean.limpiar()}"
+									class="col s5 waves-effect waves-light btn modal-trigger push-s2"/>
+						</div>
+               </h:form>
+            
+            <h:outputText value="#{perfilBean.mensaje1}"/> <p></p>
+            <h:outputText value="#{perfilBean.mensaje}"/>
+            
+             	</div>
+            
+<script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="resources/js/materialize.js"></script>
+
+      </ui:define>
+            
+</body> 
+</ui:composition>
