@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<html lang="es"
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <head jsf:id="head">
 	<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<link type="text/css" rel="stylesheet" href="resources/css/materialize.min.css" media="screen,projection" />
-		<link type="text/css" rel="stylesheet" href="resources/css/estilos.css" />
+		<link type="text/css" rel="stylesheet" href="../resources/css/materialize.min.css" media="screen,projection" />
+		<link type="text/css" rel="stylesheet" href="../resources/css/estilos.css" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>#{tituloPagina}</title>
 </head>
@@ -17,7 +18,7 @@
 <body>
 	<div class="barra col l12">
 	
-		  <img src="resources/img/barra.png" style="width: 100%;"/>
+		  <img src="../resources/img/barra.png" style="width: 100%;"/>
 
 		<div class="logousuario" style="margin-top: -100px;margin-left: 1350px">
 			<a href="login.xhtml"><i class="medium material-icons black-text rigth-align black-text" 
@@ -39,7 +40,7 @@
 				<div class="container">
 					<div class="valign-wrapper"
 						style="margin-left: 17%; margin-bottom: 25%">
-						<img src="resources/img/S.I.E.jpg" />
+						<img src="../resources/img/S.I.E.jpg" />
 					</div>
 				</div>
 
@@ -72,7 +73,7 @@
 
 				<div class="row">
 					<div class="valign-wrapper">
-						<a href="bienes.xhtml" class=" accent-4 black-text"> <i
+						<a href="../bienes.xhtml" class=" accent-4 black-text"> <i
 							class="logobien medium material-icons black-text col s6">weekend</i>
 							<H6 class="right-align black-text col s6" style="margin-top: 12%; font-size: 120%; margin-left: -8%">Bienes</H6>
 						</a>
@@ -81,7 +82,7 @@
 
 				<div class="row">
 					<div class="valign-wrapper">
-						<a href="" class=" accent-4 black-text"> <i
+						<a href="barraConsultas.xhtml" class=" accent-4 black-text"> <i
 							class="medium material-icons black-text col s6">search</i>
 							<H6 class="black-text col s6" style="margin-top: 3%; margin-left: -10%; font-size: 120%">Consultas
 								Informes</H6>
@@ -91,7 +92,7 @@
 
 				<div class="row">
 					<div class="valign-wrapper">
-						<a href="login.xhtml" class=" accent-4 black-text"> <i
+						<a href="../login.xhtml" class=" accent-4 black-text"> <i
 							class="medium material-icons black-text col s6">content_paste</i>
 							<H6 class="right-align black-text col s6" style="margin-top: 5%; margin-left: -23%; font-size: 120%">Toma
 								fisica</H6>
@@ -101,7 +102,7 @@
 
 				<div class="row">
 					<div class="valign-wrapper">
-						<a href="novedades.xhtml" class=" accent-4 black-text"> <i
+						<a href="../novedades.xhtml" class=" accent-4 black-text"> <i
 							class="medium material-icons black-text col s6">assignment</i>
 							<H6 class="black-text col s6" style="margin-top: 5%; margin-left: -10%; font-size: 120%">Generar
 								Novedades</H6>
@@ -114,7 +115,7 @@
 			</div>
 		</div>
 	
-	<div class="col s12" style="margin-left: 18%; margin-top: 4%">
+	<div class="col s10" style="margin-left: 18%; margin-top: 4%">
 	  <ui:insert name="contenido"/>
 	</div>
 	
